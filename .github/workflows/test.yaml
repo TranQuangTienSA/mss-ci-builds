@@ -3,6 +3,7 @@ name: Test
 env:
   CI: true
   DEBUG: pw:api
+  TZ: Asia/Ho_Chi_Minh
   BASE_URL: ${{ secrets.BASE_URL }}
   GWT_GOLFY_DEFAULT_PASSWORD: ${{ secrets.GWT_GOLFY_DEFAULT_PASSWORD }}
   GWT_GOLFY_STARTER_USERNAME: ${{ secrets.GWT_GOLFY_STARTER_USERNAME }}
