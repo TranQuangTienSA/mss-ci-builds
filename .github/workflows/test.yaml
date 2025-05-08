@@ -16,7 +16,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.CHECKOUT_REPOSITORY }}
+          ref: ${{ github.event.inputs.branch || 'main' }}
+          ssh-key: ${{ secrets.CHECKOUT_SSH_KEY }}
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
